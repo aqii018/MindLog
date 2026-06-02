@@ -28,7 +28,7 @@ public class RedisService {
             }
 
         } catch(Exception e ){
-            log.error("error in redis get method " + e );
+            log.error("error in redis get method " + e.getMessage() );
             return null ;
         }
 
