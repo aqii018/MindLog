@@ -1,447 +1,451 @@
-[//]: # ()
-[//]: # ()
-[//]: # (# 📖 JournalApp – Spring Boot & MongoDB)
+# 📖 JournalApp
 
-[//]: # ()
-[//]: # (A backend application for managing personal journal entries with full **CRUD functionality** &#40;Create, Read, Update, Delete&#41;. Built using **Spring Boot** and **MongoDB**, this project is designed for learning backend development with clean and beginner-friendly code.)
+[![Java](https://img.shields.io/badge/Java-17-orange)]()
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)]()
+[![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)]()
+[![Redis](https://img.shields.io/badge/Redis-Cache-red)]()
+[![JWT](https://img.shields.io/badge/JWT-Secured-blue)]()
+[![Docker](https://img.shields.io/badge/Docker-Containerized-blue)]()
 
-[//]: # ()
-[//]: # (---)
+A production-ready backend application built using **Spring Boot 3**, **Spring Security 6**, **MongoDB**, **Redis**, **JWT Authentication**, and **Docker**.
 
-[//]: # ()
-[//]: # (## 👋 About Me)
-
-[//]: # ()
-[//]: # (<h3 align="center">Hi, I'm Aaqib 👋</h3>)
-
-[//]: # ()
-[//]: # (<p align="center">)
-
-[//]: # (  🎓 Computer Engineering @ Amity University <br>)
-
-[//]: # (  💻 Passionate about Java backend development <br>)
-
-[//]: # (  🔬 Learning full-stack development by building real-world projects <br>)
-
-[//]: # (  📬 Contact: <a href="mailto:aaqibalam291@gmail.com">aaqibalam291@gmail.com</a> <br>)
-
-[//]: # (  🌐 <a href="https://www.linkedin.com/in/aaqib-alam-50929a204/">LinkedIn</a>)
-
-[//]: # (</p>)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## 📂 Project Structure)
-
-[//]: # ()
-[//]: # (The application code is located inside the [`journalApp/`]&#40;./journalApp/&#41; directory.)
-
-[//]: # (Before running the project:)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (cd journalApp)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## ✨ Features)
-
-[//]: # ()
-[//]: # (* 📝 Create journal entries &#40;with user association&#41;)
-
-[//]: # (* 📑 View all journal entries)
-
-[//]: # (* 🔍 Get a journal entry by ID)
-
-[//]: # (* ✏️ Update existing entries)
-
-[//]: # (* ❌ Delete journal entries)
-
-[//]: # (* ⚡ REST API endpoints tested with Postman)
-
-[//]: # (* 🌱 MongoDB integration)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## 🛠️ Tech Stack)
-
-[//]: # ()
-[//]: # (<p align="center">)
-
-[//]: # (  <img title="Java" height="30" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/java-original.svg">&nbsp;&nbsp;)
-
-[//]: # (  <img title="Spring Boot" height="35" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/spring-boot.svg">&nbsp;&nbsp;)
-
-[//]: # (  <img title="MongoDB" height="34" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/mongodb.svg">)
-
-[//]: # (</p>)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## 🚀 How to Run)
-
-[//]: # ()
-[//]: # (1. Clone the repo:)
-
-[//]: # ()
-[//]: # (   ```bash)
-
-[//]: # (   git clone https://github.com/sal12321/journalApp.git)
-
-[//]: # (   cd journalApp)
-
-[//]: # (   ```)
-
-[//]: # ()
-[//]: # (2. Start MongoDB &#40;default: `localhost:27017`&#41;.)
-
-[//]: # ()
-[//]: # (3. Run the application:)
-
-[//]: # ()
-[//]: # (   ```bash)
-
-[//]: # (   mvn spring-boot:run)
-
-[//]: # (   ```)
-
-[//]: # ()
-[//]: # (4. Access API at:)
-
-[//]: # ()
-[//]: # (   ```)
-
-[//]: # (   http://localhost:8080/journal)
-
-[//]: # (   ```)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## 📌 Example API Endpoints)
-
-[//]: # ()
-[//]: # (### ➕ Create an entry)
-
-[//]: # ()
-[//]: # (`POST /journal/{username}`)
-
-[//]: # (Body &#40;JSON&#41;:)
-
-[//]: # ()
-[//]: # (```json)
-
-[//]: # ({)
-
-[//]: # (  "title": "My First Journal",)
-
-[//]: # (  "content": "Today I started using JournalApp!")
-
-[//]: # (})
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (### 📖 Get all entries)
-
-[//]: # ()
-[//]: # (`GET /journal/{username}`)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (### 🔍 Get entry by ID)
-
-[//]: # ()
-[//]: # (`GET /journal/id/{username}/{id}`)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (### ✏️ Update entry)
-
-[//]: # ()
-[//]: # (`PUT /journal/id/{username}/{id}`)
-
-[//]: # (Body &#40;JSON&#41;:)
-
-[//]: # ()
-[//]: # (```json)
-
-[//]: # ({)
-
-[//]: # (  "title": "Updated Title",)
-
-[//]: # (  "content": "Updated content")
-
-[//]: # (})
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (### ❌ Delete entry)
-
-[//]: # ()
-[//]: # (`DELETE /journal/id/{username}/{id}`)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## 🧪 Tests)
-
-[//]: # ()
-[//]: # (* A basic Spring Boot context test is included.)
-
-[//]: # (* API endpoints can be tested with **Postman**.)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (## 🧠 Future Improvements)
-
-[//]: # ()
-[//]: # (* 🔐 Add authentication & JWT security)
-
-[//]: # (* 🌍 Deploy with Docker)
-
-[//]: # (* 🖥️ Create a frontend &#40;React/Vue&#41;)
-
-[//]: # (* 🧪 Add unit & integration tests)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (<p align="center">)
-
-[//]: # (  Made with ❤️ by <a href="https://github.com/sal12321">Aaqib Alam</a>)
-
-[//]: # (</p>)
-
-[//]: # ()
-[//]: # (---)
-
-[//]: # ()
-[//]: # (Would you like me to also add a **Postman collection JSON export** for your API &#40;so others can import and test your endpoints easily&#41;?)
+JournalApp enables users to securely manage personal journal entries while providing advanced capabilities such as role-based authorization, sentiment analysis, email notifications, text-to-speech generation, weather integration, Redis caching, and cloud deployment.
 
 ---
 
-# 📖 JournalApp – Secure Spring Boot & MongoDB Application
+## 🚀 Live Application
 
-A **secure backend journal management system** built with **Spring Boot 3**, **Spring Security 6**, and **MongoDB**.
-The project demonstrates modern **authentication/authorization**, **hashed password storage**, and complete **CRUD APIs** for managing personal journal entries.
+**Production URL**
 
----
-
-## 👨‍💻 About Me
-
-<h3 align="center">Hi, I'm Aaqib 👋</h3>
-
-<p align="center">
-  🎓 Computer Engineering @ Amity University <br>
-  💻 Passionate about Java backend development <br>  
-  🔬 Exploring Spring Boot, MongoDB, and Security <br>  
-  📬 Contact: <a href="mailto:aaqibalam291@gmail.com">aaqibalam291@gmail.com</a> <br>  
-  🌐 <a href="https://www.linkedin.com/in/aaqib-alam-50929a204/">LinkedIn</a>  
-</p>  
+```text
+https://journal-app-3fpe.onrender.com
+```
 
 ---
 
-## ✨ Features
+## ✨ Core Features
 
-* 📝 **User Management**
+### 🔐 Authentication & Authorization
 
-   * Create new users via `/public/create-user`
-   * Passwords stored in **BCrypt hashed format**
-* 🔐 **Authentication & Security**
+- JWT Authentication
+- Spring Security 6
+- BCrypt Password Hashing
+- Stateless Security Architecture
+- Protected REST APIs
+- Role-Based Access Control (RBAC)
+- ADMIN and USER Roles
 
-   * Integrated with **Spring Security 6**
-   * `/public/**` → accessible without login
-   * `/journal/**` & `/user/**` → require authentication (Basic Auth)
-* 📓 **Journal Management**
+### 📓 Journal Management
 
-   * Create, view, update, delete journal entries per user
-   * Each journal entry stored with **timestamp** and linked to a user
-* 🗄 **MongoDB Integration**
+- Create Journal Entries
+- Update Journal Entries
+- Delete Journal Entries
+- Retrieve Personal Journals
+- Sentiment Tracking
+- User-Specific Data Isolation
 
-   * User and journal data stored in MongoDB collections
-* ⚡ REST API tested with Postman
+### 👤 User Management
+
+- User Registration
+- Secure Login
+- Profile Updates
+- Password Updates
+- Email Preferences
+- Sentiment Analysis Preferences
+
+### 👨‍💼 Admin Features
+
+- Create Admin Accounts
+- View All Registered Users
+- Administrative Operations
+- Role-Based Endpoint Protection
+
+### ⚡ Performance & Scalability
+
+- Redis Caching
+- Reduced Database Calls
+- Faster API Responses
+- Improved Application Performance
+
+### 🤖 AI & Utility Services
+
+- Text-to-Speech Generation
+- Sentiment Analysis
+- Email Notifications
+- Weather Information Integration
+
+### ☁️ Deployment & DevOps
+
+- Dockerized Application
+- GitHub Actions CI Pipeline
+- Render Cloud Deployment
+- OpenAPI Documentation
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ Architecture
 
-<p align="center">  
-  <img title="Java" height="30" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/java-original.svg">&nbsp;&nbsp;  
-  <img title="Spring Boot" height="35" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/spring-boot.svg">&nbsp;&nbsp;  
-  <img title="Spring Security" height="32" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/spring-security.svg">&nbsp;&nbsp;  
-  <img title="MongoDB" height="34" src="https://raw.githubusercontent.com/sal12321/images/main/aaqibAlam/images/mongodb.svg">  
-</p>  
+```text
+Client
+   │
+   ▼
+JWT Authentication
+   │
+   ▼
+Spring Security
+   │
+   ▼
+Controllers
+   │
+   ▼
+Services
+   │
+ ┌─┴───────────────┐
+ ▼                 ▼
+Redis Cache     MongoDB
+```
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend
+
+- Java 17
+- Spring Boot 3
+- Spring Security 6
+- Spring Data MongoDB
+- Spring Cache
+- Maven
+
+### Database
+
+- MongoDB Atlas
+
+### Caching
+
+- Redis
+
+### Security
+
+- JWT Authentication
+- BCrypt Password Encoding
+- Role-Based Access Control
+
+### Documentation
+
+- OpenAPI 3
+- Swagger UI
+
+### DevOps
+
+- Docker
+- GitHub Actions
+- Render
 
 ---
 
 ## 📂 Project Structure
 
-```
-journalApp/
-│── src/main/java/com/salAce/journalApp/
-│   ├── config/              # Spring Security configuration
-│   ├── controller/          # REST controllers
-│   ├── entity/              # MongoDB entities (User, JournalEntry)
-│   ├── repo/                # Spring Data MongoDB repositories
-│   ├── service/             # Business logic services
-│── src/main/resources/
-│   ├── application.properties  # DB & server configs
-│── pom.xml                  # Maven dependencies
+```text
+src
+├── main
+│   ├── java
+│   │   ├── config
+│   │   ├── controller
+│   │   ├── entity
+│   │   ├── enums
+│   │   ├── filter
+│   │   ├── repo
+│   │   ├── service
+│   │   ├── cache
+│   │   ├── schedular
+│   │   ├── utils
+│   │   └── JournalApplication
+│   │
+│   └── resources
+│       ├── static
+│       └── application.properties
+│
+└── test
 ```
 
 ---
 
-## 🚀 How to Run
+## 🔑 Authentication
 
-1. Clone the repo:
+### Register
 
-   ```bash
-   git clone https://github.com/sal12321/journalApp.git
-   cd journalApp
-   ```
+```http
+POST /public/signup
+```
 
-2. Start MongoDB (default: `localhost:27017`)
-
-3. Run the Spring Boot app:
-
-   ```bash
-   mvn spring-boot:run
-   ```
-
-4. API available at:
-
-   ```
-   http://localhost:8080
-   ```
-
----
-
-## 📌 API Endpoints
-
-### 🔑 User APIs
-
-#### ➕ Create User (No Auth Required)
-
-`POST /public/create-user`
+Request
 
 ```json
 {
-  "userName": "aaqib",
-  "password": "mypassword"
+  "userName": "john",
+  "password": "password123",
+  "email": "john@example.com"
 }
 ```
 
-✅ Password automatically hashed before saving.
+---
+
+### Login
+
+```http
+POST /public/login
+```
+
+Request
+
+```json
+{
+  "userName": "john",
+  "password": "password123"
+}
+```
+
+Response
+
+```json
+{
+  "token": "JWT_TOKEN"
+}
+```
+
+Use the token for protected APIs:
+
+```http
+Authorization: Bearer JWT_TOKEN
+```
 
 ---
 
-### 📓 Journal APIs (Require Basic Auth)
+## 📓 Journal APIs
 
-#### ➕ Create Journal Entry
+### Create Journal Entry
 
-`POST /journal/{username}`
+```http
+POST /journal
+```
 
 ```json
 {
   "title": "My First Journal",
-  "content": "Started using JournalApp today!"
+  "content": "Today was productive.",
+  "sentiment": "HAPPY"
 }
 ```
 
-#### 📖 Get All Entries of User
+### Get All Journal Entries
 
-`GET /journal/{username}`
+```http
+GET /journal
+```
 
-#### 🔍 Get Entry by ID
+### Get Journal Entry By ID
 
-`GET /journal/id/{id}`
+```http
+GET /journal/id/{id}
+```
 
-#### ✏️ Update Entry
+### Update Journal Entry
 
-`PUT /journal/id/{username}/{id}`
+```http
+PUT /journal/id/{id}
+```
+
+### Delete Journal Entry
+
+```http
+DELETE /journal/id/{id}
+```
+
+---
+
+## 👨‍💼 Admin APIs
+
+### Create Admin
+
+```http
+POST /admin/create-admin
+```
+
+### View All Users
+
+```http
+GET /admin/all-users
+```
+
+---
+
+## 🎙️ Text To Speech API
+
+```http
+POST /TextToVoice
+```
+
+Request
 
 ```json
 {
-  "title": "Updated Title",
-  "content": "Updated content"
+  "text": "Hello World",
+  "modelId": "voice-model"
 }
 ```
 
-#### ❌ Delete Entry
+Response
 
-`DELETE /journal/id/{username}/{id}`
-
----
-
-## 🔐 Security Flow
-
-* **Spring Security 6** with `SecurityFilterChain` (no deprecated `WebSecurityConfigurerAdapter`).
-* `/public/**` → accessible without authentication.
-* All other endpoints require **Basic Auth** with valid username & password.
-* Passwords stored in **BCrypt format** (never plain text).
-* Authentication handled by **UserDetailsService** implementation.
-
----
-
-## 🧪 Testing
-
-* Use **Postman** for API testing.
-* Add credentials in **Basic Auth** tab when hitting `/journal/**`.
-* First request after user creation: login with plain password.
-* Verified entries in MongoDB stored with **hashed password**.
-
----
-
-## 🧠 Future Improvements
-
-* 🔑 Replace Basic Auth with **JWT Authentication**.
-* 🌍 Dockerize Spring Boot + MongoDB setup.
-* 🖥 Build frontend with **React**.
-* 🧪 Add unit & integration tests.
-* 📊 Add role-based access (Admin/User).
-
----
-
-## 📝 Commit Update
-
-```
-git commit -m "SpringSecurity 6 added, /public/** has no encryption and /journal/** , /user/** and rest are encrypted. Passwords are stored in hashed format."
+```text
+Audio Output
 ```
 
 ---
 
-<p align="center">  
-  Made with ❤️ by <a href="https://github.com/sal12321">Aaqib Alam</a>  
-</p>  
+## ⚡ Redis Caching
+
+Redis is used to cache frequently accessed application data and reduce repeated database queries.
+
+### Benefits
+
+- Faster Response Times
+- Reduced MongoDB Load
+- Improved Scalability
+- Better User Experience
 
 ---
 
+## 🐳 Docker Deployment
 
+### Build Docker Image
+
+```bash
+docker build -t journal-app .
+```
+
+### Run Docker Container
+
+```bash
+docker run -p 8080:8080 journal-app
+```
+
+Application will be available at:
+
+```text
+http://localhost:8080
+```
+
+---
+
+## ⚙️ Environment Variables
+
+```env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+REDIS_HOST=your_redis_host
+REDIS_PORT=your_redis_port
+EMAIL_USERNAME=your_email
+EMAIL_PASSWORD=your_email_password
+GEMINI_API_KEY=your_api_key
+```
+
+---
+
+## 🚀 Local Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/sal12321/Journal-Entry-App.git
+```
+
+```bash
+cd Journal-Entry-App
+```
+
+### Build Project
+
+```bash
+mvn clean package
+```
+
+### Run Application
+
+```bash
+java -jar target/*.jar
+```
+
+---
+
+## 📚 API Documentation
+
+The application includes OpenAPI documentation and can be explored using Swagger UI or imported into Postman.
+
+---
+
+## 📸 Screenshots
+
+### Swagger Documentation
+
+![Swagger](DBimg/swagger/Screenshot%202025-10-04%20181919.png)
+
+### Redis Caching
+
+![Redis](DBimg/Redis/get.png)
+
+### MongoDB Atlas Integration
+
+![MongoDB](DBimg/storing%20the%20data%20from%20atlas.png)
+
+### SonarQube Analysis
+
+![SonarQube](DBimg/sonarQube%20code%20quaity%20test.png)
+
+---
+
+## 🔒 Security Highlights
+
+- JWT-Based Authentication
+- BCrypt Password Hashing
+- Role-Based Authorization
+- Protected Administrative Endpoints
+- Stateless Authentication Flow
+
+---
+
+## 📈 Performance Highlights
+
+- Redis Caching
+- Optimized Database Access
+- Reduced Response Latency
+- Scalable Service Architecture
+
+---
+
+## 🔮 Future Enhancements
+
+- Refresh Token Support
+- OAuth2 Authentication
+- API Rate Limiting
+- Kubernetes Deployment
+- Distributed Tracing
+- Multi-Factor Authentication (MFA)
+
+---
+
+## 👨‍💻 Author
+
+### Aaqib Alam
+
+Java Backend Developer | Spring Boot Enthusiast
+
+- GitHub: https://github.com/sal12321
+- LinkedIn: https://www.linkedin.com/in/aaqib-alam-50929a204/
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a star.
