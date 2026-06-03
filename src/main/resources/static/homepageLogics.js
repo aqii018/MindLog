@@ -1,7 +1,7 @@
 //    const API_URL = 'https://journal-entry-app-production.up.railway.app/';
 //    const API_URL = 'https://journal-entry-app-production.up.railway.app';
-const API_URL = 'http://localhost:8080';
-//const API_URL = "https://journal-entry-app-production.up.railway.app";
+//const API_URL = 'http://localhost:8080';  //for localhost
+const API_URL = "https://journal-app-3fpe.onrender.com/"; // for production
 
 let authToken = '';
 let currentUser = {};
@@ -125,7 +125,7 @@ async function login(e) {
     const password = document.getElementById('loginPassword').value;
 
     const requestData = { userName, password };
-    logAPICall('POST', '/public/login', requestData);
+//    logAPICall('POST', '/public/login', requestData);
 
     try {
         const response = await fetch(`${API_URL}/public/login`, {
