@@ -1,7 +1,7 @@
 //    const API_URL = 'https://journal-entry-app-production.up.railway.app/';
 //    const API_URL = 'https://journal-entry-app-production.up.railway.app';
 //const API_URL = 'http://localhost:8080';  //for localhost
-const API_URL = "https://journal-app-3fpe.onrender.com/"; // for production
+const API_URL = "https://mindlog-production-97b0.up.railway.app"; // for production
 
 let authToken = '';
 let currentUser = {};
