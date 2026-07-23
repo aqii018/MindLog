@@ -1,0 +1,35 @@
+package com.salAce.MindLog.entity;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import com.salAce.MindLog.enums.Sentiment;
+import lombok.Data;
+
+
+
+import lombok.*;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+
+@Document(collection = "journal_entries")
+
+@Data
+@NoArgsConstructor
+public class JournalEntry {
+
+    @Id
+    @JsonSerialize(using = ToStringSerializer.class)
+    private ObjectId id ;
+    @NonNull
+    private String title ;
+    private String content;
+    private LocalDateTime date;
+    private Sentiment sentiment ;
+
+
+
+}

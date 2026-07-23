@@ -13,7 +13,7 @@
 	</parent>
 
 	<groupId>com.salAce</groupId>
-	<artifactId>journalApp</artifactId>
+	<artifactId>MindLogApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>journalApp</name>
 	<description>E2EE Journal App</description>

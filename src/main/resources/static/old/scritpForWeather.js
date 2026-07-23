@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api";
+const API_URL = "http://localhost:8080";
 //const API_URL = 'https://journal-entry-app-production.up.railway.app/';
 //const API_URL = 'https://journal-entry-app-production.up.railway.app/';
 //const API_URL = 'https://mindlog-production-97b0.up.railway.app';  //@270
